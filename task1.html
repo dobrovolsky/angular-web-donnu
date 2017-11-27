@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coins</title>
+    <script src="Libraries/angular.js"></script>
+    <script src="task1.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+</head>
+<body ng-app="moneyApp">
+    <div class="container">
+        <div class="row" ng-controller="MoneyListController">
+                <ul class="list-group">
+                <li ng-repeat="coin in money" class="list-group-item">
+                    <span>{{coin.name}}/{{coin.code}}</span>
+                    <p>{{coin.value}}</p>
+                </li>
+              </ul>
+        </div>
+    </div>
+        
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" 
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" 
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</body>
+</html>
