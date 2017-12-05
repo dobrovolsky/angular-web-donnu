@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <script src="Libraries/angular.js"></script>
-    <script src="js/task2.js"></script>
+    <script src="js/task3.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <body ng-app="myApp" ng-controller="todoCtrl">
     <div class="container">
@@ -20,12 +20,14 @@
         <table class="table">
             <thead>
                 <th>Name</th>
-                <th>Description</th>
+                <th></th>
             </thead>
-            <tbody ng-repeat="item in todoList">
+            <tbody ng-repeat="item in todoList" ng-init="showDetails = false">
                 <tr>
                     <td>{{item.name}}</td>
-                    <td>{{item.description}}</td>
+                    <td><input type="button" class="btn" value="Details" ng-click="showDetails = ! showDetails">
+                        <p ng-show="showDetails">{{item.description}}</p>
+                    </td>
                 </tr>
             </tbody>
         </table>

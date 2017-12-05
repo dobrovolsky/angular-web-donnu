@@ -21,4 +21,7 @@ app.controller('todoCtrl', function($scope) {
         $scope.todoDescription = "";
         set_item(todo_item)
     };
+    $scope.showDetails = function() {
+        alert(12);
+    };
 });
