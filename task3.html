@@ -1,41 +1,68 @@
 <!DOCTYPE html>
 <html>
-    <script src="Libraries/angular.js"></script>
-    <script src="js/task3.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<script src="Libraries/angular.js"></script>
+<script src="js/task3.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<style>
+    .wrapper {
+        display: flex;
+    }
+
+    .left {
+        flex: 0 0 65%;
+    }
+
+    .right {
+        flex: 1;
+        padding-top: 35px;
+    }
+    .detail_button {
+        margin-top: 8px;
+        line-height: 24px;
+    }
+</style>
 <body ng-app="myApp" ng-controller="todoCtrl">
-    <div class="container">
-         <div class="row">
-            <h2>My Todo List</h2>
+<div class="container">
+    <div class="row">
+        <h2>My Todo List</h2>
 
-            <form ng-submit="todoAdd()">
-                <div class="form-group">
-                    <input type="text" class="form-control" ng-model="todoName" size="50" placeholder="name">
-                    <input type="text" class="form-control" ng-model="todoDescription" size="50" placeholder="description">
-                </div>
-                <input type="submit" value="Add New" class="btn">
-            </form>
-        </div>
-
-        <table class="table">
-            <thead>
+        <form ng-submit="todoAdd()">
+            <div class="form-group">
+                <input type="text" class="form-control" ng-model="todoName" size="50" placeholder="name">
+                <input type="text" class="form-control" ng-model="todoDescription" size="50" placeholder="description">
+            </div>
+            <input type="submit" value="Add New" class="btn">
+        </form>
+    </div>
+    <div class="wrapper">
+        <div class="left">
+            <table class="table">
+                <thead>
                 <th>Name</th>
-                <th></th>
-            </thead>
-            <tbody ng-repeat="item in todoList" ng-init="showDetails = false">
+                </thead>
+                <tbody ng-repeat="item in todoList">
                 <tr>
                     <td>{{item.name}}</td>
-                    <td><input type="button" class="btn" value="Details" ng-click="showDetails = ! showDetails">
-                        <p ng-show="showDetails">{{item.description}}</p>
-                    </td>
                 </tr>
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
+        <div class="right">
+            <div ng-repeat="item in todoList" ng-init="showDetails = false">
+                <input type="button" class="detail_button" value="Details" ng-click="showDetails = ! showDetails" ng-show="!showDetails">
+                <p ng-show="showDetails">{{item.description}}</p>
+            </div>
+        </div>
+    </div>
+    <div>
+
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-            crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>
 </html>
