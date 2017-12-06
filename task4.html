@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coins</title>
+    <script src="Libraries/angular.js"></script>
+    <script src="js/task4.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+</head>
+<body ng-app="myApp">
+    <div class="container">
+        <div class="row" ng-controller="testingCtrl">
+            <div ng-switch="viewDisplay">
+                <div ng-switch-when="questions">
+                    <p>{{ currentQuestin.question }}</p>
+                    <form ng-submit="processAnswer()">
+                        <div ng-repeat="item in currentQuestin.answer">
+                            <input type="radio" value="{{item.id}}" ng-model="answer.answerId">{{item.text}}
+                        </div>
+                        <input type="submit" value="Send answer">
+                    </form>
+                </div>
+                <div ng-switch-when="result">
+                    <p>Your result is {{ scoreResult }}</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</body>
+</html>
