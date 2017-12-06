@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coins</title>
+    <script src="Libraries/angular.js"></script>
+    <script src="js/task6.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+</head>
+<body ng-app="myApp">
+    <div class="container">
+        <div class="row" ng-controller="formCtrl">
+            <form name="myForm">
+                <input type="text" placeholder="Full name" name="full_name" ng-model="fullName" ng-minlength="6" ng-maxlength="255" required >
+                <div>
+                    <p ng-show="myForm.full_name.$error.minlength">Should be longer than 6 symbol</p>
+                    <p ng-show="myForm.full_name.$error.maxlength">Should be lower than 255 symbol</p>
+                    <p ng-show="myForm.full_name.$error.required">Field is required</p>
+                </div>
+                <input type="email" placeholder="email" name="email" ng-model="email" required >
+                <div>
+                    <p ng-show="myForm.email.$error.required">Field is required</p>
+                    <p ng-show="myForm.email.$error.email">Should be valid email address</p>
+                </div>
+                <input type="text" placeholder="phone" name="phone" ng-model="phone" pattern="string" ng-pattern="/^(\+?(\d{1}|\d{2}|\d{3})[- ]?)?\d{3}[- ]?\d{3}[- ]?\d{4}$/" required>
+                <div>
+                    <p ng-show="myForm.phone.$error.required">Field is required</p>
+                    <p ng-show="myForm.phone.$error.pattern">Should be valid phone number</p>
+                </div>
+                <input type="password" placeholder="password" name="password1" ng-model="password1" ng-minlength="6" ng-maxlength="255" required>
+                <div>
+                    <p ng-show="myForm.password1.$error.minlength">Should be longer than 6 symbol</p>
+                    <p ng-show="myForm.password1.$error.maxlength">Should be lower than 255 symbol</p>
+                    <p ng-show="myForm.password1.$error.required">Field is required</p>
+                </div>
+                <input type="password" placeholder="password again" name="password2" ng-model="password2" ng-minlength="6" ng-maxlength="255"
+                       required ng-change="passwordCompare()">
+                <div>
+                    <p ng-show="myForm.password2.$error.equals">Password shoud be the same two times</p>
+                    <p ng-show="myForm.password2.$error.minlength">Should be longer than 6 symbol</p>
+                    <p ng-show="myForm.password2.$error.maxlength">Should be lower than 255 symbol</p>
+                    <p ng-show="myForm.password2.$error.required">Field is required</p>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
