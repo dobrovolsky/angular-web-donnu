@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coins</title>
+    <script src="Libraries/angular.js"></script>
+    <script src="js/task5.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <style>
+        .style1 {
+            color: forestgreen;
+        }
+        .style2 {
+            color: red;
+        }
+        .style3 {
+            color: slateblue;
+        }
+    </style>
+
+</head>
+<body ng-app="myApp">
+<div class="container">
+    <div class="row" ng-controller="cssCtrl">
+        <div ng-repeat="item in cssClasses">
+            <input type="button" value="{{item}}" ng-click="setStyle(item)">
+        </div>
+        <p class="{{ currentStyleClass }}">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pellentesque, velit at consectetur rhoncus,
+            dui ipsum congue augue, a pretium augue diam eget arcu. Nulla mattis sit amet nulla vel condimentum. Nullam
+            vel elementum sapien. Mauris ut fermentum velit, ac tristique neque. Mauris sed blandit velit. Aenean in
+            felis quis eros lobortis vulputate vitae ac tortor. Vestibulum convallis fermentum nulla, sit amet accumsan
+            sem. Aenean porta condimentum purus a mattis.
+
+            Donec et vulputate dui, id accumsan erat. Nunc gravida diam mauris, non vulputate neque dapibus ut. Vivamus
+            sollicitudin eu risus at fringilla. Nullam dolor risus, lobortis id urna at, ornare accumsan dui. Sed in
+            dolor velit. Pellentesque elit libero, volutpat eu enim ac, dapibus sollicitudin orci. Fusce dignissim
+            mattis volutpat. Aliquam sed sapien ipsum. Morbi condimentum semper lacus sed congue. Nulla justo purus,
+            consequat quis enim nec, mollis blandit eros. Nulla non urna arcu. Nunc urna sapien, suscipit porta
+            elementum eu, interdum in erat. Vestibulum feugiat, felis nec feugiat convallis, erat elit rutrum dolor, id
+            maximus nibh elit non tellus. In lorem purus, vulputate cursus urna sit amet, congue ultricies magna. Nulla
+            eleifend sit amet erat et interdum.
+
+        </p>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</body>
+</html>
